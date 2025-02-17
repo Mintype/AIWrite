@@ -15,7 +15,7 @@
                 <MenuItem Header="Save As"/>
             </MenuItem>
             <MenuItem Header="Edit">
-                <MenuItem Header="Clear"/>
+                <MenuItem Header="Clear" Click="ClearText"/>
             </MenuItem>
         </Menu>
 
@@ -37,7 +37,7 @@
             <TextBox Grid.Column="0" Margin="5" VerticalAlignment="Center" Watermark="file name" />
 
             <!-- Font Selection -->
-            <ComboBox Grid.Column="1" Margin="5" Width="170" SelectedIndex="1">
+            <ComboBox Grid.Column="1" Margin="5" Width="170" SelectedIndex="0">
                 <ComboBoxItem Content="Arial"/>
                 <ComboBoxItem Content="Times New Roman"/>
                 <ComboBoxItem Content="Courier New"/>
@@ -90,7 +90,10 @@
         <!-- Text Editor -->
         <Grid>
             <Border BorderThickness="1" Margin="5">
-                <TextBox Name="TextEditor" AcceptsReturn="True" FontSize="14"/>
+                <TextBox Name="TextEditorHints" AcceptsReturn="True" IsReadOnly="True" FontSize="14"/>
+            </Border>
+            <Border BorderThickness="1" Margin="5">
+                <TextBox Name="TextEditor" AcceptsReturn="True" FontSize="14" Opacity="0.65"/>
             </Border>
         </Grid>
     </DockPanel>
