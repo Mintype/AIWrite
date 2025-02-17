@@ -1,0 +1,97 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AIWrite.MainWindow"
+        Title="AIWrite"
+        MinWidth="600" MinHeight="300"
+        Width="800" Height="450">
+
+    <DockPanel>
+        <!-- Menu Bar -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="New"/>
+                <MenuItem Header="Open"/>
+                <MenuItem Header="Save"/>
+                <MenuItem Header="Save As"/>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Clear"/>
+            </MenuItem>
+        </Menu>
+
+        <!-- Toolbar -->
+        <Grid DockPanel.Dock="Top" Background="Gray" Height="40">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- Input Text Box (File name) -->
+            <TextBox Grid.Column="0" Margin="5" VerticalAlignment="Center" Watermark="file name" />
+
+            <!-- Font Selection -->
+            <ComboBox Grid.Column="1" Margin="5" Width="170" SelectedIndex="1">
+                <ComboBoxItem Content="Arial"/>
+                <ComboBoxItem Content="Times New Roman"/>
+                <ComboBoxItem Content="Courier New"/>
+            </ComboBox>
+
+            <!-- Font Size -->
+            <ComboBox Grid.Column="2" Margin="5" Width="80" SelectedIndex="0">
+                <ComboBoxItem Content="12"/>
+                <ComboBoxItem Content="14"/>
+                <ComboBoxItem Content="16"/>
+                <ComboBoxItem Content="18"/>
+                <ComboBoxItem Content="24"/>
+            </ComboBox>
+            
+            <!-- Formatting Buttons -->
+            <Button Grid.Column="3" Margin="5" Width="30" Height="30">
+                <Button.Content>
+                    <Image Width="20" Height="20" Source="/Assets/bold.png"/>
+                </Button.Content>
+            </Button>
+            <Button Grid.Column="4" Margin="5" Width="30" Height="30">
+                <Button.Content>
+                    <Image Width="20" Height="20" Source="/Assets/italic.png"/>
+                </Button.Content>
+            </Button>
+            <Button Grid.Column="5" Margin="5" Width="30" Height="30">
+                <Button.Content>
+                    <Image Width="20" Height="20" Source="/Assets/underline.png"/>
+                </Button.Content>
+            </Button>
+
+            <!-- Text Alignment Buttons -->
+            <Button Grid.Column="6" Margin="5" Width="30" Height="30">
+                <Button.Content>
+                    <Image Width="20" Height="20" Source="/Assets/align-left.png"/>
+                </Button.Content>
+            </Button>
+            <Button Grid.Column="7" Margin="5" Width="30" Height="30">
+                <Button.Content>
+                    <Image Width="20" Height="20" Source="/Assets/align-center.png"/>
+                </Button.Content>
+            </Button>
+            <Button Grid.Column="8" Margin="5" Width="30" Height="30">
+                <Button.Content>
+                    <Image Width="20" Height="20" Source="/Assets/align-right.png"/>
+                </Button.Content>
+            </Button>
+        </Grid>
+
+        <!-- Text Editor -->
+        <Grid>
+            <Border BorderThickness="1" Margin="5">
+                <TextBox Name="TextEditor" AcceptsReturn="True" FontSize="14"/>
+            </Border>
+        </Grid>
+    </DockPanel>
+</Window>
