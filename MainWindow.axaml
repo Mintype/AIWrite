@@ -3,7 +3,8 @@
         x:Class="AIWrite.MainWindow"
         Title="AIWrite"
         MinWidth="600" MinHeight="300"
-        Width="800" Height="450">
+        Width="800" Height="450"
+        KeyDown="OnKeyDown">
 
     <DockPanel>
         <!-- Menu Bar -->
